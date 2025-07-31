@@ -323,7 +323,7 @@ const ThemeToggle = () => {
 // Search Bar Component
 const SearchBar = ({ onSearch, searchTerm, setSearchTerm }) => {
   return (
-    <div className="relative max-w-xl mx-auto mr-99">
+    <div className="relative max-w-xl mx-auto ">
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
       <input
         type="text"
