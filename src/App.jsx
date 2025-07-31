@@ -321,18 +321,27 @@ const ThemeToggle = () => {
 };
 
 // Search Bar Component
+// Search Bar Component
 const SearchBar = ({ onSearch, searchTerm, setSearchTerm }) => {
   return (
-    <div className="relative max-w-mg mx-auto ">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-      <input
-        type="text"
-        placeholder="Search for a country..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        onKeyPress={(e) => e.key === 'Enter' && onSearch()}
-        className="w-full pl-10 pr-4 py-3 rounded-lg border border-white/30 dark:border-gray-600/50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 shadow-lg"
-      />
+    <div className="relative max-w-mg mx-auto flex">
+      <div className="relative flex-1">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' && onSearch()}
+          className="w-full pl-10 pr-4 py-3 rounded-l-lg border border-white/30 dark:border-gray-600/50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 shadow-lg"
+        />
+      </div>
+      <button
+        onClick={onSearch}
+        className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg border border-blue-600 hover:border-blue-700 transition-all duration-300 shadow-lg flex items-center justify-center"
+      >
+        <Search className="w-5 h-5" />
+      </button>
     </div>
   );
 };
